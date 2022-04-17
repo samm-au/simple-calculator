@@ -11,6 +11,14 @@ buttons.map((button) =>
         display.innerText = "";
         equation = "";
         break;
+      case ".":
+        if (!display.innerText.includes(".")) {
+          equation += e.target.innerText;
+          display.innerText = equation;
+          break;
+        } else {
+          display.innerText = equation += e.target.innerText;
+        }
       case "←":
         if (display.innerText) {
           display.innerText = display.innerText.slice(0, -1);
