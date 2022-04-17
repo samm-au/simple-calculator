@@ -83,8 +83,6 @@ buttons.map((button) =>
           break;
         }
       default:
-        // display.innerText += e.target.innerText;
-        console.log(display.innerText.length);
         if (display.innerText.length < 10) {
           display.innerText += e.target.innerText;
         } else {
