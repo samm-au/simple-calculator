@@ -5,6 +5,7 @@ h1 {
 
 p {
   font-family: roboto;
+  text-align: center;
 }
 
 .calculater__container {
@@ -40,6 +41,17 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #98bf88;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #8a8a8a;
 }
 
 #screen {
@@ -90,6 +102,10 @@ body {
           box-shadow: 0px 5px 0px #424242, inset 0px -5px 0px #bcbcbc;
 }
 
+.buttons .button:hover {
+  cursor: pointer;
+}
+
 .buttons .button:active {
   height: 75px;
   width: 110px;
@@ -111,7 +127,7 @@ body {
           box-shadow: 0px 5px 0px #424242;
 }
 
-[contentEditable="true"]:empty:not(:focus):before {
+[contentEditable="false"]:empty:not(:focus):before {
   content: attr(data-text);
 }
 
@@ -120,10 +136,15 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: roboto;
+}
+
+footer img {
+  width: 30px;
+  padding-left: 10px;
 }
 
 footer span {

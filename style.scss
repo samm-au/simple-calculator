@@ -5,6 +5,7 @@ h1 {
 
 p {
   font-family: roboto;
+  text-align: center;
 }
 
 .calculater__container {
@@ -25,6 +26,16 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: rgba(152, 191, 136, 100%);
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+  transition: 0.2s;
+
+  &:hover {
+    color: rgb(138, 138, 138);
+  }
 }
 
 #screen {
@@ -63,6 +74,10 @@ body {
       inset 0px -5px 0px rgba(188, 188, 188, 100%);
   }
 
+  .button:hover {
+    cursor: pointer;
+  }
+
   .button:active {
     height: 75px;
     width: 110px;
@@ -81,15 +96,20 @@ body {
 }
 
 // Placeholder number in screen
-[contentEditable="true"]:empty:not(:focus):before {
+[contentEditable="false"]:empty:not(:focus):before {
   content: attr(data-text);
 }
 
 footer {
   margin-top: auto;
   display: flex;
-  justify-content: center;
+  align-items: center;
   font-family: roboto;
+
+  img {
+    width: 30px;
+    padding-left: 10px;
+  }
 
   span {
     display: inline-flex;
