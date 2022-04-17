@@ -2,6 +2,8 @@ let display = document.getElementById("screen");
 
 let buttons = Array.from(document.getElementsByClassName("button"));
 
+let equation = "";
+
 buttons.map((button) =>
   button.addEventListener("click", (e) => {
     switch (e.target.innerText) {
@@ -40,32 +42,54 @@ buttons.map((button) =>
           const firstValue = parseFloat(values[0]);
           const secondValue = parseFloat(values[1]);
           const result = firstValue + secondValue;
-          display.innerText = result;
+          if (result.toString().length > 9) {
+            display.innerText = result.toPrecision(8);
+          } else {
+            display.innerText = result;
+          }
           break;
         } else if (display.innerText.includes("-")) {
           const values = display.innerText.split("-");
           const firstValue = parseFloat(values[0]);
           const secondValue = parseFloat(values[1]);
-          const result = (firstValue - secondValue).toFixed();
-          display.innerText = result;
+          const result = firstValue - secondValue;
+          if (result.toString().length > 9) {
+            display.innerText = result.toPrecision(8);
+          } else {
+            display.innerText = result;
+          }
           break;
         } else if (display.innerText.includes("/")) {
           const values = display.innerText.split("/");
           const firstValue = parseFloat(values[0]);
           const secondValue = parseFloat(values[1]);
           const result = firstValue / secondValue;
-          display.innerText = result;
+          if (result.toString().length > 9) {
+            display.innerText = result.toPrecision(8);
+          } else {
+            display.innerText = result;
+          }
           break;
         } else if (display.innerText.includes("*")) {
           const values = display.innerText.split("*");
           const firstValue = parseFloat(values[0]);
           const secondValue = parseFloat(values[1]);
           const result = firstValue * secondValue;
-          display.innerText = result;
+          if (result.toString().length > 9) {
+            display.innerText = result.toPrecision(8);
+          } else {
+            display.innerText = result;
+          }
           break;
         }
       default:
-        display.innerText += e.target.innerText;
+        // display.innerText += e.target.innerText;
+        console.log(display.innerText.length);
+        if (display.innerText.length < 10) {
+          display.innerText += e.target.innerText;
+        } else {
+          alert("too many numbers");
+        }
     }
   })
 );

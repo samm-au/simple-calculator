@@ -3,24 +3,43 @@ h1 {
   font-size: 60px;
 }
 
+p {
+  font-family: roboto;
+}
+
 .calculater__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 520px;
   height: 600px;
   margin: 20px;
-  background-color: rgb(86, 86, 86);
+  background-color: #565656;
   border-radius: 20px;
-  box-shadow: 0px 18px 0px rgb(66, 66, 66);
+  -webkit-box-shadow: 0px 18px 0px #424242;
+          box-shadow: 0px 18px 0px #424242;
 }
 
 body {
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgb(152, 191, 136);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #98bf88;
 }
 
 #screen {
@@ -28,22 +47,35 @@ body {
   height: 36px;
   padding: 20px;
   margin: 30px 16px 30px 16px;
-  background-color: rgb(188, 209, 191);
+  background-color: #bcd1bf;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
   border-radius: 20px;
   font-size: 50px;
-  color: rgb(82, 85, 82);
+  color: #525552;
   font-family: "Orbitron", sans-serif;
-  box-shadow: 0px 0px 6px 5px rgb(66, 66, 66);
+  -webkit-box-shadow: 0px 0px 6px 5px #424242;
+          box-shadow: 0px 0px 6px 5px #424242;
 }
 
 .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .buttons .button {
   border-radius: 20px;
   font-size: 36px;
@@ -53,33 +85,60 @@ body {
   margin-right: 4px;
   margin-left: 4px;
   margin-bottom: 10px;
-  background-color: rgb(236, 236, 236);
-  box-shadow: 0px 5px 0px rgb(66, 66, 66);
+  background-color: #ececec;
+  -webkit-box-shadow: 0px 5px 0px #424242;
+          box-shadow: 0px 5px 0px #424242;
 }
+
 .buttons .bottomButton {
   width: 225px;
 }
 
-[contentEditable=true]:empty:not(:focus):before {
+[contentEditable="true"]:empty:not(:focus):before {
   content: attr(data-text);
 }
 
 footer {
   margin-top: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 30px;
   font-family: roboto;
 }
+
 footer span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  animation: love 0.7s infinite ease-out;
+  -webkit-animation: love 0.7s infinite ease-out;
+          animation: love 0.7s infinite ease-out;
 }
-@keyframes love {
-  0%, 100% {
-    transform: scale(1.3);
+
+@-webkit-keyframes love {
+  0%,
+  100% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
   }
   30% {
-    transform: scale(1.5);
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
 }
+
+@keyframes love {
+  0%,
+  100% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  30% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+/*# sourceMappingURL=style.css.map */
