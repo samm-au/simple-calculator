@@ -7,6 +7,13 @@ let equation = "";
 buttons.map((button) =>
   button.addEventListener("click", (e) => {
     switch (e.target.innerText) {
+      case "0":
+        if (!display.innerText.includes("0")) {
+          equation = e.target.innerText;
+          console.log(equation);
+          display.innerText = equation;
+          break;
+        }
       case "C":
         display.innerText = "";
         equation = "";
