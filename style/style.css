@@ -1,33 +1,3 @@
-h1 {
-  font-family: roboto;
-  font-size: 60px;
-}
-
-p {
-  font-family: roboto;
-  text-align: center;
-}
-
-.calculater__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 520px;
-  height: 600px;
-  margin: 20px;
-  background-color: #565656;
-  border-radius: 20px;
-  -webkit-box-shadow: 0px 18px 0px #424242;
-          box-shadow: 0px 18px 0px #424242;
-}
-
 body {
   min-height: 100vh;
   display: -webkit-box;
@@ -41,6 +11,40 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #98bf88;
+}
+
+h1 {
+  font-family: roboto;
+  font-size: 60px;
+}
+
+p {
+  font-family: roboto;
+  text-align: center;
+}
+
+main {
+  margin-bottom: 50px;
+}
+
+.calculater__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: 460px;
+  margin: 20px;
+  background-color: #565656;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 18px 0px #424242;
+          box-shadow: 0px 18px 0px #424242;
 }
 
 a {
@@ -70,7 +74,7 @@ a:hover {
       -ms-flex-pack: end;
           justify-content: end;
   border-radius: 20px;
-  font-size: 50px;
+  font-size: 40px;
   color: #525552;
   font-family: "Orbitron", sans-serif;
   -webkit-box-shadow: 0px 0px 6px 5px #424242, inset 0px 0px 6px 5px #93a995;
@@ -89,17 +93,17 @@ a:hover {
 }
 
 .buttons .button {
-  border-radius: 20px;
-  font-size: 36px;
+  border-radius: 15px;
+  font-size: 32px;
   font-weight: bold;
-  height: 80px;
-  width: 110px;
+  height: 53px;
+  width: 80px;
   margin-right: 4px;
   margin-left: 4px;
   margin-bottom: 10px;
   background-color: #ececec;
-  -webkit-box-shadow: 0px 5px 0px #424242, inset 0px -5px 0px #bcbcbc;
-          box-shadow: 0px 5px 0px #424242, inset 0px -5px 0px #bcbcbc;
+  -webkit-box-shadow: 0px 3px 0px #424242, inset 0px -3px 0px #bcbcbc;
+          box-shadow: 0px 3px 0px #424242, inset 0px -3px 0px #bcbcbc;
 }
 
 .buttons .button:hover {
@@ -107,24 +111,21 @@ a:hover {
 }
 
 .buttons .button:active {
-  height: 75px;
-  width: 110px;
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
-  -webkit-box-shadow: 0px 5px 0px #424242;
-          box-shadow: 0px 5px 0px #424242;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  -webkit-box-shadow: 0px 3px 0px #424242;
+          box-shadow: 0px 3px 0px #424242;
 }
 
 .buttons .bottomButton {
-  width: 225px;
+  width: 167px;
 }
 
 .buttons .bottomButton:active {
-  width: 225px;
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
-  -webkit-box-shadow: 0px 5px 0px #424242;
-          box-shadow: 0px 5px 0px #424242;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  -webkit-box-shadow: 0px 3px 0px #424242;
+          box-shadow: 0px 3px 0px #424242;
 }
 
 [contentEditable="false"]:empty:not(:focus):before {

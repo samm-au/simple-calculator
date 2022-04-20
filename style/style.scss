@@ -1,3 +1,11 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(152, 191, 136, 100%);
+}
+
 h1 {
   font-family: roboto;
   font-size: 60px;
@@ -8,24 +16,20 @@ p {
   text-align: center;
 }
 
+main {
+  margin-bottom: 50px;
+}
+
 .calculater__container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 520px;
-  height: 600px;
+  width: 400px;
+  height: 460px;
   margin: 20px;
   background-color: rgba(86, 86, 86, 100%);
   border-radius: 20px;
   box-shadow: 0px 18px 0px rgba(66, 66, 66, 100%);
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgba(152, 191, 136, 100%);
 }
 
 a {
@@ -48,7 +52,7 @@ a {
   align-items: center;
   justify-content: end;
   border-radius: 20px;
-  font-size: 50px;
+  font-size: 40px;
   color: rgba(82, 85, 82, 100%);
   font-family: "Orbitron", sans-serif;
   box-shadow: 0px 0px 6px 5px rgba(66, 66, 66, 100%),
@@ -61,17 +65,17 @@ a {
   justify-content: center;
 
   .button {
-    border-radius: 20px;
-    font-size: 36px;
+    border-radius: 15px;
+    font-size: 32px;
     font-weight: bold;
-    height: 80px;
-    width: 110px;
+    height: 53px;
+    width: 80px;
     margin-right: 4px;
     margin-left: 4px;
     margin-bottom: 10px;
     background-color: rgba(236, 236, 236, 100%);
-    box-shadow: 0px 5px 0px rgba(66, 66, 66, 100%),
-      inset 0px -5px 0px rgba(188, 188, 188, 100%);
+    box-shadow: 0px 3px 0px rgba(66, 66, 66, 100%),
+      inset 0px -3px 0px rgba(188, 188, 188, 100%);
   }
 
   .button:hover {
@@ -79,19 +83,16 @@ a {
   }
 
   .button:active {
-    height: 75px;
-    width: 110px;
-    transform: translateY(5px);
-    box-shadow: 0px 5px 0px rgba(66, 66, 66, 100%);
+    transform: translateY(1px);
+    box-shadow: 0px 3px 0px rgba(66, 66, 66, 100%);
   }
 
   .bottomButton {
-    width: 225px;
+    width: 167px;
   }
   .bottomButton:active {
-    width: 225px;
-    transform: translateY(5px);
-    box-shadow: 0px 5px 0px rgba(66, 66, 66, 100%);
+    transform: translateY(1px);
+    box-shadow: 0px 3px 0px rgba(66, 66, 66, 100%);
   }
 }
 

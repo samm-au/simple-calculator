@@ -11,20 +11,16 @@ buttons.map((button) =>
         if (display.innerText.includes(".")) {
           display.innerText += e.target.innerText;
           equation += e.target.innerText;
-          console.log(equation);
           display.innerText = equation;
-          break;
-        } else {
-          display.innerText = "0";
-          equation += e.target.innerText;
-          break;
         }
+        break;
+
       case "C":
         display.innerText = "";
         equation = "";
         break;
       case ".":
-        if (display.innerText.indexOf(".") === -1) {
+        if (!display.innerText.includes(".")) {
           display.innerText += ".";
           equation += ".";
         }
