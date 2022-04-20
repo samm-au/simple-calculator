@@ -8,10 +8,15 @@ buttons.map((button) =>
   button.addEventListener("click", (e) => {
     switch (e.target.innerText) {
       case "0":
-        if (!display.innerText.includes("0")) {
-          equation = e.target.innerText;
+        if (display.innerText.includes(".")) {
+          display.innerText += e.target.innerText;
+          equation += e.target.innerText;
           console.log(equation);
           display.innerText = equation;
+          break;
+        } else {
+          display.innerText = "0";
+          equation += e.target.innerText;
           break;
         }
       case "C":
@@ -19,13 +24,11 @@ buttons.map((button) =>
         equation = "";
         break;
       case ".":
-        if (!display.innerText.includes(".")) {
-          equation += e.target.innerText;
-          display.innerText = equation;
-          break;
-        } else {
-          display.innerText = equation += e.target.innerText;
+        if (display.innerText.indexOf(".") === -1) {
+          display.innerText += ".";
+          equation += ".";
         }
+        break;
       case "←":
         if (display.innerText) {
           display.innerText = display.innerText.slice(0, -1);
