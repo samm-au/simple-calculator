@@ -1,7 +1,10 @@
+// Working with the display
 const display = document.getElementById("screen");
 
+// Working with an array of all our buttons
 const buttons = Array.from(document.getElementsByClassName("button"));
 
+//Initializing with an empty string equation which will be different to the display as we don't want the display to look exactly like the equation.
 let equation = "";
 
 //Displaying result when "=" is clicked
@@ -13,10 +16,12 @@ function displayResult(result) {
   }
 }
 
+// Events for each button click
 buttons.map((button) =>
   button.addEventListener("click", (e) => {
     switch (e.target.innerText) {
       case "0":
+        // Can only add more zeros if it has a dot
         if (display.innerText.includes(".")) {
           display.innerText += e.target.innerText;
           equation += e.target.innerText;
@@ -65,11 +70,9 @@ buttons.map((button) =>
           display.innerText = e.target.innerText;
           break;
         }
-        break;
       case "=":
         if (equation.includes("+")) {
           const values = equation.split("+");
-          console.log(values);
           const firstValue = parseFloat(values[0]);
           const secondValue = parseFloat(values[1]);
           const result = firstValue + secondValue;
