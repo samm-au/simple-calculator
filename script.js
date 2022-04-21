@@ -1,8 +1,17 @@
-let display = document.getElementById("screen");
+const display = document.getElementById("screen");
 
-let buttons = Array.from(document.getElementsByClassName("button"));
+const buttons = Array.from(document.getElementsByClassName("button"));
 
 let equation = "";
+
+//Displaying result when "=" is clicked
+function displayResult(result) {
+  if (result.toString().length > 9) {
+    display.innerText = result.toPrecision(8);
+  } else {
+    display.innerText = result;
+  }
+}
 
 buttons.map((button) =>
   button.addEventListener("click", (e) => {
@@ -64,44 +73,29 @@ buttons.map((button) =>
           const firstValue = parseFloat(values[0]);
           const secondValue = parseFloat(values[1]);
           const result = firstValue + secondValue;
-          if (result.toString().length > 9) {
-            display.innerText = result.toPrecision(8);
-          } else {
-            display.innerText = result;
-          }
+          displayResult(result);
+
           break;
         } else if (equation.includes("-")) {
           const values = equation.split("-");
           const firstValue = parseFloat(values[0]);
           const secondValue = parseFloat(values[1]);
           const result = firstValue - secondValue;
-          if (result.toString().length > 9) {
-            display.innerText = result.toPrecision(8);
-          } else {
-            display.innerText = result;
-          }
+          displayResult(result);
           break;
         } else if (equation.includes("/")) {
           const values = equation.split("/");
           const firstValue = parseFloat(values[0]);
           const secondValue = parseFloat(values[1]);
           const result = firstValue / secondValue;
-          if (result.toString().length > 9) {
-            display.innerText = result.toPrecision(8);
-          } else {
-            display.innerText = result;
-          }
+          displayResult(result);
           break;
         } else if (equation.includes("*")) {
           const values = equation.split("*");
           const firstValue = parseFloat(values[0]);
           const secondValue = parseFloat(values[1]);
           const result = firstValue * secondValue;
-          if (result.toString().length > 9) {
-            display.innerText = result.toPrecision(8);
-          } else {
-            display.innerText = result;
-          }
+          displayResult(result);
           break;
         } else {
           display.innerText = equation;
