@@ -19,12 +19,14 @@ buttons.map((button) =>
         display.innerText = "";
         equation = "";
         break;
+
       case ".":
         if (!display.innerText.includes(".")) {
           display.innerText += ".";
           equation += ".";
         }
         break;
+
       case "←":
         if (display.innerText) {
           display.innerText = display.innerText.slice(0, -1);
