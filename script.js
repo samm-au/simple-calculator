@@ -26,7 +26,6 @@ buttons.map((button) =>
           equation += ".";
         }
         break;
-
       case "←":
         if (display.innerText) {
           display.innerText = display.innerText.slice(0, -1);
