@@ -16,6 +16,8 @@ function displayResult(result) {
   }
 }
 
+//I use display and equation because I want the screen to look different to the function equation being calculated to make it seem like a common calculator you'd use in real life.
+
 // Events for each button click
 buttons.map((button) =>
   button.addEventListener("click", (e) => {
@@ -26,16 +28,25 @@ buttons.map((button) =>
           display.innerText += e.target.innerText;
           equation += e.target.innerText;
           display.innerText = equation;
+          //Adding more zeros if the number in front is not a zero
+        } else if (display.innerText.split("").filter(Number) > 0) {
+          display.innerText += e.target.innerText;
+          equation += e.target.innerText;
+        } else if (display.innerText == 0) {
+          equation = 0;
+          display.innerText = 0;
         }
         break;
-
       case "C":
         display.innerText = "";
         equation = "";
         break;
 
       case ".":
-        if (!display.innerText.includes(".")) {
+        if (display.innerText === "0") {
+          display.innerText = "0.";
+          equation = "0.";
+        } else if (!display.innerText.includes(".")) {
           display.innerText += ".";
           equation += ".";
         }
@@ -105,7 +116,10 @@ buttons.map((button) =>
           break;
         }
       default:
-        if (display.innerText.length < 10) {
+        if (display.innerText === "0") {
+          display.innerText = e.target.innerText;
+          equation = e.target.innerText;
+        } else if (display.innerText.length < 10) {
           equation += e.target.innerText;
           display.innerText += e.target.innerText;
         } else {
@@ -114,3 +128,20 @@ buttons.map((button) =>
     }
   })
 );
+
+// Testing
+
+// Can use operators - Y
+
+// Can create decimal numbers - Y
+
+// Can print all buttons - Y
+
+// Does not add more than 1 dot - Y
+
+// Start of the number can't be a zero unless theres a dot point following the zero - Y
+
+// Numbers does not overflow out of screeen - Y
+
+//1.094 + 3 - passes
+//0.45 * 10 - passes
