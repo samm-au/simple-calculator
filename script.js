@@ -29,7 +29,7 @@ buttons.map((button) =>
           equation += e.target.innerText;
           display.innerText = equation;
           //Adding more zeros if the number in front is not a zero
-        } else if (display.innerText.split("").filter(Number) > 0) {
+        } else if (display.innerText > 0) {
           display.innerText += e.target.innerText;
           equation += e.target.innerText;
         } else if (display.innerText == 0) {
