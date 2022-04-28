@@ -16,6 +16,23 @@ function displayResult(result) {
   }
 }
 
+const evaluate = (expression) => {
+  const [left, right] = expression.split(/[\+\-\/\*]/);
+  const [l, r] = [+left, +right];
+
+  let result;
+
+  if (expression.includes("*")) result = l * r;
+  else if (expression.includes("/")) result = l / r;
+  else if (expression.includes("-")) result = l - r;
+  else if (expression.includes("+")) result = l + r;
+  else {
+    throw new Error(`Could not evaluate imcomplete expression`);
+  }
+
+  return result;
+};
+
 //I use display and equation because I want the screen to look different to the function equation being calculated to make it seem like a common calculator you'd use in real life.
 
 // Events for each button click
@@ -41,7 +58,6 @@ buttons.map((button) =>
         display.innerText = "";
         equation = "";
         break;
-
       case ".":
         if (display.innerText === "0") {
           display.innerText = "0.";
@@ -58,23 +74,8 @@ buttons.map((button) =>
         }
         break;
       case "+":
-        if (display.innerText) {
-          equation += e.target.innerText;
-          display.innerText = e.target.innerText;
-          break;
-        }
       case "-":
-        if (display.innerText) {
-          equation += e.target.innerText;
-          display.innerText = e.target.innerText;
-          break;
-        }
       case "/":
-        if (display.innerText) {
-          equation += e.target.innerText;
-          display.innerText = e.target.innerText;
-          break;
-        }
       case "*":
         if (display.innerText) {
           equation += e.target.innerText;
@@ -82,39 +83,16 @@ buttons.map((button) =>
           break;
         }
       case "=":
-        if (equation.includes("+")) {
-          const values = equation.split("+");
-          const firstValue = parseFloat(values[0]);
-          const secondValue = parseFloat(values[1]);
-          const result = firstValue + secondValue;
-          displayResult(result);
+        let result;
 
-          break;
-        } else if (equation.includes("-")) {
-          const values = equation.split("-");
-          const firstValue = parseFloat(values[0]);
-          const secondValue = parseFloat(values[1]);
-          const result = firstValue - secondValue;
+        try {
+          result = evaluate(equation);
           displayResult(result);
-          break;
-        } else if (equation.includes("/")) {
-          const values = equation.split("/");
-          const firstValue = parseFloat(values[0]);
-          const secondValue = parseFloat(values[1]);
-          const result = firstValue / secondValue;
-          displayResult(result);
-          break;
-        } else if (equation.includes("*")) {
-          const values = equation.split("*");
-          const firstValue = parseFloat(values[0]);
-          const secondValue = parseFloat(values[1]);
-          const result = firstValue * secondValue;
-          displayResult(result);
-          break;
-        } else {
+          equation = result;
+        } catch (e) {
           display.innerText = equation;
-          break;
         }
+        break;
       default:
         if (display.innerText === "0") {
           display.innerText = e.target.innerText;
